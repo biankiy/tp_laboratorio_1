@@ -1,0 +1,10 @@
+# depslib dependency file v1.0
+1587237809 source:c:\users\compu casa\desktop\final bianca entregar\calculadoratp1\main.c
+	<stdio.h>
+	<stdlib.h>
+	"calculadorab.h"
+
+1587237809 c:\users\compu casa\desktop\final bianca entregar\calculadoratp1\calculadorab.h
+
+1587237919 source:c:\users\compu casa\desktop\final bianca entregar\calculadoratp1\calculadorab.c
+
