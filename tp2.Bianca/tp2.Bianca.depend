@@ -1,0 +1,14 @@
+# depslib dependency file v1.0
+1589674871 source:c:\users\compumama.compu-casa\desktop\tp2.bianca\main.c
+	<stdio.h>
+	<stdlib.h>
+	<string.h>
+
+1589673168 c:\users\compumama.compu-casa\desktop\tp2.bianca\datawarehouse.h
+
+1589672733 source:c:\users\compumama.compu-casa\desktop\tp2.bianca\employee.c
+	<stdio.h>
+	<stdlib.h>
+	<string.h>
+	"DATAWAREHOUSE.H"
+
