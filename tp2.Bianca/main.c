@@ -412,7 +412,7 @@ void modifyEmployee(Employee list[],int len,Sector sectores[],int tamsec)
             {
 
             case 1:
-                printf("------------------------------\n")
+                printf("------------------------------\n");
                 printf("******Modificar Nombre*******\n");
 
                 printf("\n Desea Modificar  el Nombre?: y/n \n");
