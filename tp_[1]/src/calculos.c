@@ -28,17 +28,19 @@ float calcularTarjeCredito(float precioPasaje){
 }
 float calcularBitcoin(float precioPasaje){
 
-	float bitcoin = 500.46;
+	float bitcoin = 4606954.55;
 	float resultado;
 
 	resultado = precioPasaje / bitcoin;
 
 	return resultado;
 }
+
 float calculararUnitario(int km,float precioPasaje){
 
 	float resultado;
-		resultado = km / precioPasaje;
+
+	resultado = precioPasaje /km;
 	return resultado;
 }
 

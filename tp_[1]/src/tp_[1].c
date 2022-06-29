@@ -11,8 +11,8 @@
 #include <stdio.h>
 #include <stdlib.h>
 #include <conio.h>
-#include "bian.h"
 #include "calculos.h"
+#include "menu.h"
 #include "utn.h"
 
 
@@ -50,7 +50,7 @@ int main(void) {
 		switch (opcion)
 		{
 			case 1:
-				utn_getNumero(&kilometro, "Ingresar Kilometros", "Error, ingrese nuevamente\n", 0, 99999, 3);
+				utn_getNumero(&kilometro, "Ingresar Kilometros: ", "Error, ingrese nuevamente\n", 1, 99999, 3);
 
 				flag1 = 1;
 

@@ -65,13 +65,13 @@ int menuIngresoDeVuelos(int opcion, int flag1, float* precioAerolineas, float* p
 						switch (opcion) {
 						case 1:
 
-							if(	utn_pedirfloat(precioAerolineas, "\nIngresar Precio de \"Aerolineas-Argentinas\":$", "error", 0, 9999, 3) ==0){
+							if(	utn_pedirfloat(precioAerolineas, "\nIngresar Precio de \"Aerolineas-Argentinas\":$", "error", 0, 999999, 3) ==0){
 								flagM1 = 1;
 							}
 
 							break;
 						case 2:
-							if(	utn_pedirfloat(precioLatam, "\nIngresar Precio de \"Latam\":$", "error", 0, 9999, 3) == 0){
+							if(	utn_pedirfloat(precioLatam, "\nIngresar Precio de \"Latam\":$", "error", 0, 999999, 3) == 0){
 								flagM2 = 1;
 							}
 							break;
@@ -106,8 +106,8 @@ void mostrarCostosAerolinea(float precioAerolineas, float aerolineaDebito, float
 	printf("\n\nPRECIO AEROLINEA:$%.2f", precioAerolineas);
 	printf("\nPrecio con Tarjeta de Debito %.2f",aerolineaDebito);
 	printf("\nPrecio con Tarjeta de Credito %.2f", aerolinaCredito);
-	printf("\nPrecio pagando con Bitcoins %.2f",aerolineaBitcoin);
-	printf("\nPrecio Unitario %.2f",aerolineaUnitario);
+	printf("\nPrecio pagando con Bitcoins %.4f",aerolineaBitcoin);
+	printf("\nPrecio Unitario %.3f",aerolineaUnitario);
 
 }
 void mostrarCostosLatam(float precioLatam, float latamDebito, float latamCredito,float latamBitcoin, float latamUnitario ){
@@ -115,8 +115,8 @@ void mostrarCostosLatam(float precioLatam, float latamDebito, float latamCredito
 	printf("\n\nPRECIO LATAM:$%.2f", precioLatam);
 	printf("\nPrecio con Tarjeta de Debito %.2f", latamDebito);
 	printf("\nPrecio con Tarjeta de Credito %.2f",latamCredito);
-	printf("\nPrecio pagando con Bitcoins %.2f",latamBitcoin);
-	printf("\nPrecio Unitario %.2f",latamUnitario);
+	printf("\nPrecio pagando con Bitcoins %.4f",latamBitcoin);
+	printf("\nPrecio Unitario %.3f",latamUnitario);
 	printf("\n");
 }
 void cargaForzada(){
@@ -124,19 +124,41 @@ void cargaForzada(){
 	float precioAerolineasF = 162965 ;
 	float precioLatamF = 159339;
 
+	float tajertaDebitoA;
+	float tajertaCreditoA;
+	float bicoinA;
+	float unitatioA;
+	float tajertaDebitoL;
+	float tajertaCreditoL;
+	float bicoinL;
+	float unitatioL;
+
+	float diferencia = diferenciaPrecio(precioAerolineasF, precioAerolineasF);
+
+	tajertaDebitoA = calcularTarjetaDebito(precioAerolineasF);
+	tajertaCreditoA = calcularTarjeCredito(precioAerolineasF);
+	bicoinA = calcularBitcoin(precioAerolineasF);
+	unitatioA = calculararUnitario(kmCargaForzada, precioAerolineasF);
+
+	tajertaDebitoL = calcularTarjetaDebito(precioLatamF);
+	tajertaCreditoL = calcularTarjeCredito(precioLatamF);
+	bicoinL = calcularBitcoin(precioLatamF);
+	unitatioL = calculararUnitario(kmCargaForzada, precioLatamF);
+
 	printf("KMs Ingresados: $%d km \n\n", kmCargaForzada);
 	printf("Precio Aerolineas %.2f", precioAerolineasF);
-	printf("\na)Precio con tarjeta de debito: %.2f",calcularTarjetaDebito(precioAerolineasF));
-	printf("\nb)Precio con tarjeta de credito: %.2f",calcularTarjeCredito(precioAerolineasF));
-	printf("\nc)Precio pagado con Bitcoin: %.2f BTC",calcularBitcoin(precioAerolineasF));
-	printf("\nd)Mostrar precio Unitario: %.2f",calculararUnitario(kmCargaForzada, precioAerolineasF));
+
+	printf("\na)Precio con tarjeta de debito: %.2f", tajertaDebitoA);
+	printf("\nb)Precio con tarjeta de credito: %.2f", tajertaCreditoA);
+	printf("\nc)Precio pagado con Bitcoin: %.2f BTC", bicoinA);
+	printf("\nd)Mostrar precio Unitario: %.2f", unitatioA);
 
 	printf("\n\nPrecio Latam $%.2f", precioLatamF);
-	printf("\na)Precio con tarjeta de debito: %.2f",calcularTarjetaDebito(precioLatamF));
-	printf("\nb)Precio con tarjeta de credito: %.2f",calcularTarjeCredito(precioLatamF));
-	printf("\nc)Precio pagado con Bitcoin: %.2f BTC",calcularBitcoin(precioLatamF));
-	printf("\nd)Mostrar precio Unitario: %.2f",calculararUnitario(kmCargaForzada, precioLatamF));
+	printf("\na)Precio con tarjeta de debito: %.2f",tajertaDebitoL);
+	printf("\nb)Precio con tarjeta de credito: %.2f",tajertaCreditoL);
+	printf("\nc)Precio pagado con Bitcoin: %.2f BTC",bicoinL);
+	printf("\nd)Mostrar precio Unitario: %.2f", unitatioL);
 	printf("\n\n");
-
+	printf("\nLa diferencia de precio es: %.2f", diferencia);
 
 }

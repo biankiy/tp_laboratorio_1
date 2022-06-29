@@ -5,8 +5,8 @@
  *      Author: bianky
  */
 
-#ifndef BIAN_H_
-#define BIAN_H_
+#ifndef MENU_H_
+#define MENU_H_
 
 #include <stdio.h>
 #include <stdlib.h>
@@ -57,4 +57,4 @@ void mostrarCostosAerolinea(float precioAerolineas, float aerolineaDebito, float
 /// @brief realiza la carga de forzada de datos que ya estan cargados y solo muestra los resultados de los precios.
 ///
 void cargaForzada();
-#endif /* BIAN_H_ */
+#endif /* MENU_H_ */
